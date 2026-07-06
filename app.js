@@ -1356,6 +1356,9 @@ artifacts.forEach(item => {
   item.exactPeriod = exactPeriodMap[item.id];
   item.periodGroup = periodGroupMap[item.id];
 });
+window.RELIC_ARTIFACTS = artifacts;
+
+if (document.getElementById('galleryGrid')) {
 const periods = ['全部', ...Array.from(new Set(artifacts.map(i => i.periodGroup)))];
 const gallery = document.getElementById('galleryGrid');
 const filters = document.getElementById('filters');
@@ -1535,4 +1538,5 @@ document.getElementById('closeDialog').addEventListener('click',()=>dialog.close
 document.getElementById('playTheme').addEventListener('click',()=>alert('这里可以接入展厅环境声：低鼓、风声、青铜余响、纸卷展开声。当前是网页框架占位。'));
 renderFilters();
 renderGallery();
+}
 

@@ -7,8 +7,11 @@
 这是静态网页项目，可直接部署到 Netlify、Vercel、GitHub Pages 等平台。
 
 - 入口文件：`index.html`
+- 手机展示版：`mobile.html`
 - 样式文件：`styles.css`
+- 手机样式：`mobile.css`
 - 内容与交互：`app.js`
+- 手机交互：`mobile.js`
 - 图片资源：`assets/`
 
 Netlify 部署时无需构建命令，发布目录使用项目根目录即可。

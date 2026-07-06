@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>假如文物会唱歌｜手机版</title>
+  <link rel="stylesheet" href="./mobile.css" />
+</head>
+<body>
+  <main class="mobile-shell">
+    <section class="m-hero">
+      <div class="m-hero-bg"></div>
+      <nav class="m-nav"><span>文物歌者</span><a href="./index.html">桌面版</a></nav>
+      <div class="m-hero-copy">
+        <p class="m-kicker">Season 01 · Mobile Exhibition</p>
+        <h1>假如文物<br>会唱歌</h1>
+        <p>二十件文物化身歌者，把来处、荣光、沉睡与重逢，唱成可以被看见、听见、细品的文明记忆。</p>
+      </div>
+    </section>
+
+    <section class="m-listen">
+      <p class="m-kicker">Listening Room</p>
+      <h2>第一首歌已经上线</h2>
+      <p>《千里江山图》化身歌者青蘅，唱出《青绿未老》。</p>
+      <div class="m-player">
+        <div class="m-player-head"><strong>《青绿未老》</strong><span>网易云音乐</span></div>
+        <iframe title="《青绿未老》网易云音乐播放器" frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https://music.163.com/outchain/player?type=2&id=3400481420&auto=0&height=66"></iframe>
+      </div>
+    </section>
+
+    <section class="m-gallery-section">
+      <p class="m-kicker">Twenty Relic Singers</p>
+      <h2>二十位文物歌者</h2>
+      <div id="mobileCards" class="m-cards"></div>
+    </section>
+
+    <footer class="m-footer">© 2026 Enna</footer>
+  </main>
+
+  <dialog id="mobileDetail" class="m-detail">
+    <button id="mobileClose" class="m-close" aria-label="关闭">×</button>
+    <div id="mobileDetailBody"></div>
+  </dialog>
+
+  <script src="./app.js"></script>
+  <script src="./mobile.js"></script>
+</body>
+</html>
