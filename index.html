@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>假如文物会唱歌｜互动数字展厅原型</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="hero">
+    <nav class="topbar"><div class="seal">文物歌者</div><a href="#gallery">二十件文物</a><a href="#listening">听歌入口</a><a href="#archive">创作档案</a></nav>
+    <section class="hero-inner"><p class="eyebrow">AIGC Cultural Music Exhibition · Season 01</p><h1>假如文物会唱歌</h1><p class="hero-copy">让二十件中国博物馆代表性文物化身为歌者：它们讲述自己的来处、荣光、沉睡与重逢，再以国风叙事歌曲唱出一段可以被看见、听见、细品的文明记忆。</p><div class="hero-actions"><a class="btn primary" href="#gallery">进入数字展厅</a><button class="btn ghost" id="playTheme">播放展厅氛围</button></div></section>
+  </header>
+  <main>
+    <section class="intro-panel"><div><span class="section-kicker">项目方向</span><h2>数字展厅 + 音乐专辑 + AIGC制作档案</h2></div><p>当前版本是可讨论的网页骨架：图片、文物简介、歌曲入口、歌词摘录、创作档案和视觉创作档案入口已经串起来。下一步可以接入真实音频、完整歌词滚动、文物时间线、创作手记与每集视频分镜。</p></section>
+    <section id="gallery" class="gallery-section"><div class="section-head"><div><span class="section-kicker">Season 01</span><h2>二十组文物 · 歌者</h2></div><p>按历史时段浏览二十组“文物原型 × 歌者人格”，点击卡片可查看故事、音乐与视频、完整歌词。</p></div><div class="filters" id="filters"></div><div class="gallery" id="galleryGrid"></div></section>
+    <section id="listening" class="listening"><div class="vinyl"></div><div><span class="section-kicker">Listening Room</span><h2>这里将成为二十首歌的试听室</h2><p>目前网页先放置音频播放器位置。等  或后续音乐模型生成成品后，只需要把音频文件放入 <code>audio/</code> 文件夹，并在数据表中补上文件名即可。</p><div class="audio-placeholder"><span>♪</span><div><strong>《鼎中山河》试听位</strong><small>待接入 MP3 / WAV</small></div></div></div></section>
+    <section id="archive" class="archive"><span class="section-kicker">Archive</span><h2>可细品的制作档案</h2><div class="archive-grid"><article><h3>文物事实边界</h3><p>保留博物馆与公开资料依据，区分真实信息与艺术化演绎。</p></article><article><h3>歌词与叙事</h3><p>每首歌包含第一人称故事、完整歌词、独白收尾，适合短视频旁白与MV字幕。</p></article><article><h3>AIGC创作档案</h3><p>整理  音乐创作档案、文物歌手  视觉创作档案，方便复现和迭代。</p></article></div></section>
+  </main>
+  <dialog class="detail" id="detailDialog"><button class="close" id="closeDialog" aria-label="关闭">×</button><div class="detail-layout"><figure><img id="detailImage" alt="" /></figure><article><p class="eyebrow" id="detailMuseum"></p><h2 id="detailTitle"></h2><p class="detail-subtitle" id="detailSong"></p><div class="detail-tabs"><button data-tab="profile" class="active">歌者档案</button><button data-tab="story">文物自述</button><button data-tab="lyrics">完整歌词</button><button data-tab="music">网易音乐</button><button data-tab="video">歌者影像</button></div><div class="tab-body active" id="tab-profile"></div><div class="tab-body" id="tab-story"></div><div class="tab-body" id="tab-lyrics"></div><div class="tab-body" id="tab-music"></div><div class="tab-body" id="tab-video"></div></article></div></dialog>
+
+  <footer class="site-footer"> 
+    <div class="copyright-notice">
+      © 2026 Enna
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>
