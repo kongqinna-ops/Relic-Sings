@@ -26,14 +26,14 @@ function getNetEaseId(item){
 }
 
 function mobileImage(item){
-  const file = String(item.image || '').split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  const file = String(item.image || '').split('/').pop().replace(/\.(png|webp|jpeg)$/i, '.jpg');
   return `./assets/mobile/${file}`;
 }
 
 function renderCards(){
   cards.innerHTML = mobileArtifacts.map(item => `
     <article class="m-card" data-id="${mEsc(item.id)}">
-      <img src="${mEsc(mobileImage(item))}" alt="${mEsc(item.artifact)} · ${mEsc(item.singer)}" loading="lazy">
+      <img src="${mEsc(mobileImage(item))}" data-fallback="${mEsc(item.image)}" alt="${mEsc(item.artifact)} · ${mEsc(item.singer)}" loading="lazy">
       <div class="m-card-copy">
         <span>${mEsc(item.id)} · ${mEsc(item.exactPeriod || item.periodGroup)}</span>
         <h3>${mEsc(item.artifact)} · ${mEsc(item.singer)}</h3>
@@ -42,6 +42,12 @@ function renderCards(){
       </div>
     </article>
   `).join('');
+  cards.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', () => {
+      const fallback = img.dataset.fallback;
+      if(fallback && img.src !== fallback) img.src = fallback;
+    }, {once:true});
+  });
   cards.querySelectorAll('.m-card').forEach(card => {
     card.addEventListener('click', () => openMobileDetail(card.dataset.id));
   });
@@ -62,7 +68,7 @@ function openMobileDetail(id){
   const item = mobileArtifacts.find(x => x.id === id);
   if(!item) return;
   detailBody.innerHTML = `
-    <img class="m-detail-image" src="${mEsc(mobileImage(item))}" alt="${mEsc(item.artifact)}">
+    <img class="m-detail-image" src="${mEsc(mobileImage(item))}" onerror="this.onerror=null;this.src='${mEsc(item.image)}';" alt="${mEsc(item.artifact)}">
     <section class="m-detail-content">
       <p class="m-kicker">${mEsc(item.exactPeriod)} · ${mEsc(item.museum)}</p>
       <h2>${mEsc(item.artifact)} · ${mEsc(item.singer)}</h2>

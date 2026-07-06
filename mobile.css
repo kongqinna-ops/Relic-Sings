@@ -4,7 +4,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:#20150f;color:var(--ink);font-family:"Noto Serif SC","Songti SC","STSong",serif}
 .mobile-shell{min-height:100vh;background:var(--paper)}
 .m-hero{position:relative;min-height:92svh;overflow:hidden;color:var(--silk);background:#20150f}
-.m-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,10,6,.24),rgba(18,10,6,.75) 58%,#20150f),url("./assets/mobile/hero_mobile.webp") center/cover;filter:saturate(.82) contrast(.95)}
+.m-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,10,6,.24),rgba(18,10,6,.75) 58%,#20150f),url("./assets/mobile/hero_mobile.jpg") center/cover;filter:saturate(.82) contrast(.95)}
 .m-nav{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:18px 18px env(safe-area-inset-top);font-size:14px;letter-spacing:.14em}
 .m-nav span{border:1px solid rgba(255,248,236,.5);border-radius:999px;padding:7px 12px}
 .m-nav a{color:var(--silk);text-decoration:none;border-bottom:1px solid rgba(255,248,236,.38)}
