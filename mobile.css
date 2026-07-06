@@ -47,3 +47,7 @@ body{margin:0;background:#20150f;color:var(--ink);font-family:"Noto Serif SC","S
 .m-empty-player{padding:16px;border:1px dashed rgba(159,47,36,.3);border-radius:18px;color:var(--muted);background:rgba(159,47,36,.04)}
 .m-lyrics{white-space:normal}
 @media(min-width:560px){body{display:flex;justify-content:center}.mobile-shell{width:520px}.m-hero h1{font-size:82px}.m-cards{gap:18px}.m-card-copy h3{font-size:22px}}
+
+.m-player audio,.m-detail-player audio{display:block;width:100%;border:0;border-radius:12px;background:#fff8ec}
+.m-open-link{display:inline-flex;margin-top:10px;color:rgba(255,248,236,.76);font-size:13px;text-decoration:none;border-bottom:1px solid rgba(255,217,154,.36)}
+.m-detail-player .m-open-link{color:var(--red);border-bottom-color:rgba(159,47,36,.32)}

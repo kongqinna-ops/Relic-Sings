@@ -60,7 +60,8 @@ function renderMobilePlayer(item){
   }
   return `<div class="m-detail-player">
     <div class="m-player-head"><strong>${mEsc(item.song)}</strong><span>网易云音乐</span></div>
-    <iframe title="${mEsc(item.song)} 网易云音乐播放器" frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https://music.163.com/outchain/player?type=2&id=${mEsc(id)}&auto=0&height=66"></iframe>
+    <audio controls preload="none" src="https://music.163.com/song/media/outer/url?id=${mEsc(id)}.mp3"></audio>
+    <a class="m-open-link" href="${mEsc(item.media.musicLinks[0].url)}" target="_blank" rel="noopener">无法播放时，打开网易云音乐</a>
   </div>`;
 }
 

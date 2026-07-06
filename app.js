@@ -1447,7 +1447,7 @@ function renderMusicEntry(link, song, hook){
           </div>
         </div>
         <div class="netease-iframe-shell">
-          <iframe class="netease-player" title="${esc(song || '网易云音乐播放器')}" frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https://music.163.com/outchain/player?type=2&id=${esc(neteaseId)}&auto=0&height=66"></iframe>
+          <audio class="netease-audio" controls preload="none" src="https://music.163.com/song/media/outer/url?id=${esc(neteaseId)}.mp3"></audio>
         </div>
         <a class="open-platform-link" href="${esc(link.url)}" target="_blank" rel="noopener">打开网易云音乐</a>
       </div>`;
