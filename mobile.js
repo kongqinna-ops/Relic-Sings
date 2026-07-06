@@ -25,14 +25,20 @@ function getNetEaseId(item){
   return match ? match[1] : '';
 }
 
+function mobileImage(item){
+  const file = String(item.image || '').split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  return `./assets/mobile/${file}`;
+}
+
 function renderCards(){
   cards.innerHTML = mobileArtifacts.map(item => `
     <article class="m-card" data-id="${mEsc(item.id)}">
-      <img src="${mEsc(item.image)}" alt="${mEsc(item.artifact)} · ${mEsc(item.singer)}" loading="lazy">
+      <img src="${mEsc(mobileImage(item))}" alt="${mEsc(item.artifact)} · ${mEsc(item.singer)}" loading="lazy">
       <div class="m-card-copy">
-        <span>${mEsc(item.id)} · ${mEsc(item.museum)}</span>
+        <span>${mEsc(item.id)} · ${mEsc(item.exactPeriod || item.periodGroup)}</span>
         <h3>${mEsc(item.artifact)} · ${mEsc(item.singer)}</h3>
-        <p>${mEsc(item.media?.hook || item.tagline)}</p>
+        <p>${mEsc(item.tagline)}</p>
+        <small>${mEsc(item.song)} ｜ ${mEsc(item.museum)}</small>
       </div>
     </article>
   `).join('');
@@ -56,7 +62,7 @@ function openMobileDetail(id){
   const item = mobileArtifacts.find(x => x.id === id);
   if(!item) return;
   detailBody.innerHTML = `
-    <img class="m-detail-image" src="${mEsc(item.image)}" alt="${mEsc(item.artifact)}">
+    <img class="m-detail-image" src="${mEsc(mobileImage(item))}" alt="${mEsc(item.artifact)}">
     <section class="m-detail-content">
       <p class="m-kicker">${mEsc(item.exactPeriod)} · ${mEsc(item.museum)}</p>
       <h2>${mEsc(item.artifact)} · ${mEsc(item.singer)}</h2>
